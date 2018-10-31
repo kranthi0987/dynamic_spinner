@@ -1,18 +1,15 @@
 package com.example.mahiti.json3;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonObject;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -74,9 +71,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         Log.i("ds", "onCreate: " + data);
         //  dbHelper.insertdata(ss.getLhid(),ss.getLmid() ,ss.getGivenName(),ss.getSurname(),ss.getHouseholdName(),ss.getDoorNo(), ss.getBuildingNo(),ss.getStreet(), ss.getHamlet(),ss.getPrimaryOccupation(),ss.getSecondaryOccupation(), ss.getCaste(), ss.getSubcaste() , ss.getState(), ss.getDistrict(), ss.getVillage(), ss.getRelationship(), ss.getUsername());
         Log.i("aa", "onCreate: " + dbHelper);
-        spinner2 = (Spinner) findViewById(R.id.spinner2);
-        spinner3 = (Spinner) findViewById(R.id.spinner3);
-        spinner4 = (Spinner) findViewById(R.id.spinner4);
+        spinner2 = findViewById(R.id.spinner2);
+        spinner3 = findViewById(R.id.spinner3);
+        spinner4 = findViewById(R.id.spinner4);
         //FirstScreen state=new FirstScreen(getApplicationContext(),dbHelper.DATABASE,null,1);
         //FirstScreen district=new FirstScreen(getApplicationContext(),dbHelper.DATABASE,null,1);
         //FirstScreen village=new FirstScreen(getApplicationContext(),dbHelper.DATABASE,null,1);
@@ -84,6 +81,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, dbHelper.getStateList());
 
         spinner2.setAdapter(adapter2);
+        adapter2.notifyDataSetChanged();
 
 
 
@@ -92,9 +90,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             @Override
             public void onItemSelected(AdapterView<?> arg0, View arg1,int position, long arg3) {
 
-//                spinner3.setSelection(position);
-                ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, dbHelper.getDistrict(String.valueOf(spinner2.getSelectedItem())));
                 spinner3.setSelection(position);
+                ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, dbHelper.getDistrict(String.valueOf(spinner2.getSelectedItem())));
+//                spinner3.setSelection(position);
                 spinner3.setAdapter(adapter3);
                 adapter3.notifyDataSetChanged();
 
@@ -111,9 +109,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             @Override
             public void onItemSelected(AdapterView<?> arg0, View arg1,int position, long arg3) {
 
-//                spinner4.setSelection(position);
+                spinner4.setSelection(position);
                 ArrayAdapter<String> adapter4 = new ArrayAdapter<String>(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, dbHelper.getVillage((String)spinner3.getSelectedItem()));
-                spinner3.setSelection(position);
+//                spinner3.setSelection(position);
                 spinner4.setAdapter(adapter4);
                 adapter4.notifyDataSetChanged();
 
