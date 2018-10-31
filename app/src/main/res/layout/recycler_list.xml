@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="5dp"
+    android:layout_marginBottom="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginTop="5dp"
+    android:background="@drawable/table_border">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="LHID"
+            android:id="@+id/lhid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FF0006"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:textColor="#FF0006"/>
+        <TextView
+            android:text="LMID"
+            android:id="@+id/lmid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FF0006"/>
+
+        <TextView
+            android:text="/"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FF0006"/>
+
+        <TextView
+            android:text="GIVENNAME  "
+            android:id="@+id/givename"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FF0006"/>
+
+        <TextView
+            android:text="SURNAME"
+            android:id="@+id/surname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FF0006"/>
+    </LinearLayout>
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent">
+
+            <TextView
+                android:text="Household head: "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1" />
+            <TextView
+                android:text="HOHHNAME"
+                android:id="@+id/HOHHNAME"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="2" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:text="Address: "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1" />
+            <TextView
+                android:text="DOORNO,"
+                android:id="@+id/DOORNO"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="2" />
+            <TextView
+                android:text="BUILDINGFLR,"
+                android:id="@+id/BUILDINGFLR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="3" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="STREETNAME,"
+                android:id="@+id/STREETNAME"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="2" />
+            <TextView
+                android:text="HAMLETLOCALITY"
+                android:id="@+id/HAMLETLOCALITY"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="2" />
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:text="Primary occupation:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1" />
+            <TextView
+                android:text="PRIMARYOCCDESC"
+                android:id="@+id/PRIMARYOCCDESC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="2" />
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:text="Secondary occupation:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1" />
+            <TextView
+                android:text="SECOCCDESC"
+                android:id="@+id/SECOCCDESC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="2" />
+        </TableRow>
+    </TableLayout>
+</LinearLayout>
